@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile</h2>
+<p>Welcome, {{ user.username }}!</p>
+<h3>Your Calculation History</h3>
+<ul>
+    {% for item in history %}
+        <li>{{ item.date }}: Calculated for {{ item.weight }} kg - Results: {{ item.result }}</li>
+    {% empty %}
+        <li>No calculations yet.</li>
+    {% endfor %}
+</ul>
+{% endblock %}
