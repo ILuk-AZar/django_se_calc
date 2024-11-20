@@ -17,3 +17,10 @@ class CalculationHistory(models.Model):
     date = models.DateTimeField(auto_now_add=True)
     weight = models.FloatField()
     result = models.TextField()  # Результат вычислений в текстовом формате
+
+class Env_settings(models.Model):
+    gravity = models.FloatField()
+    storage = models.IntegerField()
+
+    def __str__(self):
+        return self.name
